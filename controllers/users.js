@@ -2,7 +2,7 @@ import User from '../models/users.js'
 
 export const getUserProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.currentUser._id)
+    const user = await User.find()
     if (!user) throw new Error()
     return res.status(200).json(user)
   } catch (err) {

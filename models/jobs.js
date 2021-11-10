@@ -7,4 +7,6 @@ const jobSchema = new mongoose.Schema({
   salary: { type: Number },
 })
 
+jobSchema.set('toJSON')
+
 export default mongoose.model('Job', jobSchema)
