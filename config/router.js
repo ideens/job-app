@@ -1,6 +1,10 @@
 import express from 'express'
 import { loginUser, registerUser } from '../controllers/auth.js'
-import { getUserProfile } from '../controllers/users.js'
+import {
+  getAllUsers,
+  getCurrentUser,
+  getOneUser,
+} from '../controllers/users.js'
 import {
   addAComment,
   addAPost,
@@ -10,12 +14,25 @@ import {
   updatePost,
 } from '../controllers/posts.js'
 import { secureRoute } from './secureRoute.js'
+import {
+  addProfile,
+  deleteProfile,
+  updateProfile,
+} from '../controllers/profile.js'
 
 // Invoking a router
 const router = express.Router()
 
 // Setting up a route
-router.route('/user').get(secureRoute, getUserProfile)
+router.route('/users').get(getAllUsers)
+router.route('/users/:id').get(secureRoute, getOneUser)
+router.route('/me').get(secureRoute, getCurrentUser)
+router.route('/me/profile').post(secureRoute, addProfile)
+router
+  .route('/profile/:id')
+  .delete(secureRoute, deleteProfile)
+  .put(secureRoute, updateProfile)
+
 router.route('/posts').get(getAllPosts).post(secureRoute, addAPost)
 router
   .route('/posts/:id')

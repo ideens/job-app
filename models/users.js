@@ -14,6 +14,12 @@ const userSchema = new mongoose.Schema({
   savedPost: [savedSchema],
 })
 
+userSchema.virtual('createdProfile', {
+  ref: 'Profile',
+  localField: '_id',
+  foreignField: 'owner',
+})
+
 // reverse relationship
 userSchema.virtual('createdPosts', {
   ref: 'Post',
