@@ -2,9 +2,8 @@ import mongoose from 'mongoose'
 import { dbURI } from '../config/environment.js'
 import User from '../models/users.js'
 import devData from './data/devsSeed.js'
-import bossData from './data/bossesSeed.js'
-import Job from '../models/jobs.js'
-import jobsData from './data/jobsSeed.js'
+import Post from '../models/post.js'
+import postData from './data/postsSeed.js'
 
 const seedDatabase = async () => {
   try {
@@ -16,11 +15,15 @@ const seedDatabase = async () => {
     console.log('DB dropped')
 
     // seed the users - add user data into db
-    const devs = await User.create(devData)
-    const bosses = await User.create(bossData)
+    const users = await User.create(devData)
 
-    const jobsAdded = await Job.create(jobsData)
-    console.log('JOBS ADDED - ', jobsAdded)
+    const postsWithOwners = postData.map((post) => {
+      post.owner = users[0]._id
+      return post
+    })
+
+    const postsAdded = await Post.create(postData)
+    console.log('NO. OF POSTS ADDED - ', postsAdded.length)
 
     // close the connection to the db
     await mongoose.connection.close()
