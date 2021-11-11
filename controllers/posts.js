@@ -61,6 +61,23 @@ export const updatePost = async (req, res) => {
     return res.status(200).json(updatedPost)
   } catch (err) {
     console.log(err)
-    return res.sendStatus(isNaN(Numer(err.message)) ? 422 : Number(err.message))
+    return res.sendStatus(
+      isNaN(Number(err.message)) ? 422 : Number(err.message)
+    )
+  }
+}
+
+export const addAComment = async (req, res) => {
+  try {
+    const { id } = req.params
+    const post = await Post.findById(id)
+    if (!post) throw new Error()
+    const newComment = { ...req.body, owner: req.currentUser._id }
+    post.comments.push(newComment)
+    await post.save({ validateModifiedOnly: true })
+    return res.status(200).json(post)
+  } catch (err) {
+    console.log(err)
+    return res.status(404).json({ message: 'ERROR - could not post comment' })
   }
 }

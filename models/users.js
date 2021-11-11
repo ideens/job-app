@@ -2,10 +2,31 @@ import mongoose from 'mongoose'
 import uniqueValidator from 'mongoose-unique-validator'
 import bcrypt from 'bcrypt'
 
+const savedSchema = new mongoose.Schema({
+  isSaved: { type: Boolean },
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+})
+
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
+  savedPost: [savedSchema],
+})
+
+// reverse relationship
+userSchema.virtual('createdPosts', {
+  ref: 'Post',
+  localField: '_id',
+  foreignField: 'owner',
+})
+
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform(_doc, json) {
+    delete json.password
+    return json
+  },
 })
 
 // virtual field for password confirmation

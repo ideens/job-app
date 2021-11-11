@@ -2,6 +2,7 @@ import express from 'express'
 import { loginUser, registerUser } from '../controllers/auth.js'
 import { getUserProfile } from '../controllers/users.js'
 import {
+  addAComment,
   addAPost,
   getAllPosts,
   getSinglePost,
@@ -14,13 +15,15 @@ import { secureRoute } from './secureRoute.js'
 const router = express.Router()
 
 // Setting up a route
-router.route('/users').get(getUserProfile)
+router.route('/user').get(secureRoute, getUserProfile)
 router.route('/posts').get(getAllPosts).post(secureRoute, addAPost)
 router
   .route('/posts/:id')
   .get(getSinglePost)
   .delete(secureRoute, removePost)
   .put(secureRoute, updatePost)
+
+router.route('/posts/:id/comments').post(secureRoute, addAComment)
 
 router.route('/register').post(registerUser)
 router.route('/login').post(loginUser)
