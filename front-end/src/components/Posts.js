@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getPosts } from '../helpers/api'
+import PostsCard from './PostsCard'
 
 const Posts = () => {
   const [posts, setPosts] = useState([])
@@ -10,11 +11,13 @@ const Posts = () => {
 
   return (
     <div>
-      <ul>
+      <div>
         {posts.map((post) => (
-          <li key={post._id} />
+          <div key={post._id}>
+            <PostsCard {...post} />
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
