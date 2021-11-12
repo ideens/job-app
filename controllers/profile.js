@@ -38,5 +38,3 @@ export const deleteProfile = async (req, res) => {
     return res.status(404).json({ message: 'Profile Not Found' })
   }
 }
-
-/// hello sam
