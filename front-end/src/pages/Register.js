@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 
 const Register = () => {
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +16,16 @@ const Register = () => {
       const { data } = await axios.post('/api/register', formData)
       console.log('DATA', data)
     } catch (err) {
-      console.log(err)
+      if (
+        !formData.name ||
+        !formData.email ||
+        !formData.password ||
+        !formData.passwordConfirmation
+      ) {
+        setError('Please check you have filled out all fields.')
+      } else {
+        setError('This email is already attached to an account.')
+      }
     }
   }
 
@@ -59,6 +69,7 @@ const Register = () => {
           <input type="submit" value="Register" />
         </form>
       </div>
+      <p>{error}</p>
     </div>
   )
 }

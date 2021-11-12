@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [error, setError] = useState('')
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -21,6 +22,7 @@ const Login = () => {
       }
     } catch (err) {
       console.log(err)
+      setError('Incorrect email or password.')
     }
   }
 
@@ -53,6 +55,7 @@ const Login = () => {
         />
         <input type="submit" value="Log in" />
       </form>
+      <p>{error}</p>
     </div>
   )
 }
