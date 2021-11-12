@@ -21,7 +21,6 @@ const seedDatabase = async () => {
       post.owner = users[0]._id
       return post
     })
-    console.log('POST WITH OWNERS', postsWithOwners)
 
     const postsAdded = await Post.create(postData)
     console.log('NO. OF POSTS ADDED - ', postsAdded.length)

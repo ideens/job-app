@@ -14,7 +14,6 @@ const startServers = async () => {
     // Logger
     app.use((req, _res, next) => {
       console.log(`Request received: ${req.method} = ${req.url}`)
-      console.log(req.query)
       next()
     })
 

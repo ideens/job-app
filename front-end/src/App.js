@@ -1,23 +1,22 @@
 import './App.css'
-import { useEffect } from 'react'
-import axios from 'axios'
+import Home from './pages/Home'
+import Landing from './pages/Landing'
+import { Routes, Route } from 'react-router-dom'
+import Register from './pages/Register'
+import Login from './pages/Login'
+
+//import Home component once created
 
 const App = () => {
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get('/api/posts')
-        console.log(data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getData()
-  }, [])
-
   return (
     <div className="App">
-      <h1>HELLO WORLD</h1>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="landing" element={<Landing />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
     </div>
   )
 }
