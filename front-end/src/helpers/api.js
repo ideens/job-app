@@ -17,8 +17,8 @@ export const getCurrentUser = async () => {
       headers: { Authorization: `Bearer ${token}` },
     })
     console.log(token)
-    console.log(response.data.name)
-    return response.data.name
+    console.log(response.data.firstName)
+    return response.data.firstName
   } catch (err) {
     console.log(err)
   }
