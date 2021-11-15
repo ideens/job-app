@@ -28,11 +28,14 @@ export const getSinglePost = async (id) => {
   const token = localStorage.getItem('token')
 
   try {
-    const response = await axios.get(`/api/posts/${id}`, {
+    const { data } = await axios.get(`/api/posts/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
-    console.log(response.data)
-    return response.data
+    console.log(data)
+    data.technologies = data.technologies.map((t) => {
+      return { value: t, label: t }
+    })
+    return data
   } catch (err) {
     console.log(err)
   }
