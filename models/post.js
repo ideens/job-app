@@ -15,9 +15,9 @@ const commentSchema = new mongoose.Schema(
 const postSchema = new mongoose.Schema(
   {
     project: { type: String, required: true, maxlength: 50 },
-    requirements: { type: String, required: true, maxlength: 300 },
     experience: { type: String, required: true, maxlength: 200 },
     description: { type: String, required: true, maxlength: 600 },
+    technologies: [{ type: String }],
     owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
     comments: [commentSchema],
   },
