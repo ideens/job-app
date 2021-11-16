@@ -1,73 +1,61 @@
-// import axios from 'axios'
-// import React, { useState } from 'react'
-// import Select from 'react-select'
-// import { selectOptions } from '../helpers/options.js'
+import axios from 'axios'
+import React, { useState } from 'react'
 
+const Profile = () => {
+  const [formData, setFormData] = useState({
+    bio: '',
+    skills: '',
+    experience: '',
+  })
 
-// const Profile = () => {
-//     const [formData, setFormData] = useState({
-//         bio: '',
-//         skills: '',
-//         experience: '',
-//         technologies: []
-//     })
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const token = localStorage.getItem('token')
+    try {
+      const { data } = await axios.post('api/me/profile', formData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      console.log('PROFILE DATA - ', data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData({ ...formData, [name]: value })
+  }
 
-//     const handlesubmit = async (e) => {
-//         e.preventDefault()
-//         try {
-//             const { data } = await axios.post('api/profile')           
-//         } catch (err) {
-//             console.log(err)
-            
-//         }
-//     }
+  return (
+    <div>
+      <div>
+        <form onSubmit={handleSubmit}>
+          <input
+            placeholder="Enter a bio"
+            type="text"
+            name="bio"
+            value={formData.bio}
+            onChange={handleChange}
+          />
+          <input
+            placeholder="Enter your skills"
+            type="text"
+            name="skills"
+            value={formData.skills}
+            onChange={handleChange}
+          />
+          <input
+            placeholder="Enter your experience"
+            type="text"
+            name="experience"
+            value={formData.experience}
+            onChange={handleChange}
+          />
+          <input type="submit" value="Add profile" />
+        </form>
+      </div>
+    </div>
+  )
+}
 
-//     const handleMultiChange = (selected, name) => {
-//         console.log('SELECTED - ', selected)
-//         const values = selected ? selected.map((item) => item.value) : []
-//         setFormData({ ...formData, [name]: [...selected] })
-//         console.log(values)
-//         console.log(formData)
-//       }
-
-//     return (
-//         <div>
-//             <div>
-//                 <form onsubmit={handlesubmit}>
-//                     <input
-//                         placeholder="Enter a bio"
-//                         type="text"
-//                         name="bio"
-//                         value={formData.bio}
-//                         onchange={handleChange}
-//                     />
-//                     <input
-//                         placeholder="Enter your skills"
-//                         type="text"
-//                         name="skills"
-//                         value={formData.skills}
-//                         onchange={handleChange}
-//                     />
-//                     <input
-//                         placeholder="Enter your experience"
-//                         type="text"
-//                         name="experience"
-//                         value={formData.experience}
-//                         onchange={handleChange}
-//                     />
-//                     <Select
-//                         isMulti
-//                         name="technologies"
-//                         options={selectOptions}
-//                         className="basic-multi-select"
-//                         classNamePrefix="select"
-//                         value={formData.technologies}
-//                         onChange={(selected) => handleMultiChange(selected, 'technologies')}
-//                     />
-//                 </form>
-//             </div>
-//         </div>
-//     )
-// }
-
+export default Profile

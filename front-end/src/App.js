@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import SinglePost from './components/SinglePost'
 import PostAdd from './pages/PostAdd'
 import PostEdit from './components/PostEdit'
+import Profile from './pages/Profile'
 
 //import Home component once created
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="add" element={<PostAdd />} />
         <Route path="edit/:id" element={<PostEdit />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
     </div>
   )

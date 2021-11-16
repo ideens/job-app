@@ -4,7 +4,7 @@ export const addProfile = async (req, res) => {
   try {
     const newProfile = { ...req.body, owner: req.currentUser._id }
     const addProfile = await Profile.create(newProfile)
-    console.log(addProfile)
+    console.log('ADD PROFILE - ', addProfile)
     return res.status(201).json(addProfile)
   } catch (err) {
     console.log(err)

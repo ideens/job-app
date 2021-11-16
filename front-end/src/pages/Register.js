@@ -54,7 +54,6 @@ const Register = () => {
       }
     }
   }
-
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({ ...formData, [name]: value })
@@ -103,27 +102,6 @@ const Register = () => {
             type="password"
             name="passwordConfirmation"
             value={formData.passwordConfirmation}
-            onChange={handleChange}
-          />
-          <input
-            placeholder="Enter a bio"
-            type="text"
-            name="bio"
-            value={profileData.bio}
-            onChange={handleChange}
-          />
-          <input
-            placeholder="Enter your skills"
-            type="text"
-            name="skills"
-            value={profileData.skills}
-            onChange={handleChange}
-          />
-          <input
-            placeholder="Enter your experience"
-            type="text"
-            name="experience"
-            value={profileData.experience}
             onChange={handleChange}
           />
           <input type="submit" value="Register" />
