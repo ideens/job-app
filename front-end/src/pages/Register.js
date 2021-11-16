@@ -13,13 +13,29 @@ const Register = () => {
     passwordConfirmation: '',
   })
 
+
+
+  const [profileData, setProfileData] = useState({
+
+    bio: '',
+    skills: '',
+    experience: '',
+  })
+
+
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const token = localStorage.getItem('token')
     try {
       const { data } = await axios.post('/api/register', formData)
+  
       console.log('DATA', data)
+      const { biodata } = await axios.post('/api/me/profile', profileData, {
+        headers: {Authorization: `Bearer ${token}`},
+      })
+      console.log('bioData ->', biodata)
       handleSuccessfulRegister()
     } catch (err) {
       if (
@@ -27,7 +43,10 @@ const Register = () => {
         !formData.lastName ||
         !formData.email ||
         !formData.password ||
-        !formData.passwordConfirmation
+        !formData.passwordConfirmation ||
+        !profileData.bio ||
+        !profileData.skills ||
+        !profileData.experience
       ) {
         setError('Please check you have filled out all fields.')
       } else {
@@ -39,6 +58,7 @@ const Register = () => {
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({ ...formData, [name]: value })
+    setProfileData({ ...profileData, [name]: value })
   }
 
   const handleSuccessfulRegister = () => {
@@ -83,6 +103,27 @@ const Register = () => {
             type="password"
             name="passwordConfirmation"
             value={formData.passwordConfirmation}
+            onChange={handleChange}
+          />
+          <input
+            placeholder="Enter a bio"
+            type="text"
+            name="bio"
+            value={profileData.bio}
+            onChange={handleChange}
+          />
+          <input
+            placeholder="Enter your skills"
+            type="text"
+            name="skills"
+            value={profileData.skills}
+            onChange={handleChange}
+          />
+          <input
+            placeholder="Enter your experience"
+            type="text"
+            name="experience"
+            value={profileData.experience}
             onChange={handleChange}
           />
           <input type="submit" value="Register" />

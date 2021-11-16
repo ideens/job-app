@@ -8,6 +8,9 @@ export const registerUser = async (req, res) => {
   try {
     const newUser = await User.create(req.body)
     console.log(newUser)
+    const token = jwt.sign({ sub: userToLogin._id }, secret, {
+      expiresIn: '7 days',
+    })
     return res.status(202).json({ message: `Hello, ${newUser.firstName}` })
   } catch (err) {
     console.log(err)

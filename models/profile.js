@@ -10,7 +10,6 @@ const profileSchema = new mongoose.Schema({
   bio: { type: String, required: true },
   skills: { type: String, required: true },
   experience: { type: String, required: true },
-  languages: { type: String, required: true },
   reviews: [reviewSchema],
   owner: {
     type: mongoose.Schema.ObjectId,
