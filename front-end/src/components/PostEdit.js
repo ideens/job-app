@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { getSinglePost } from '../helpers/api'
-import { useParams } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import Select from 'react-select'
 import { selectOptions } from '../helpers/options.js'
 import axios from 'axios'
 
 const PostEdit = () => {
   const { id } = useParams()
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     project: '',
     experience: '',
@@ -41,6 +43,7 @@ const PostEdit = () => {
       const updatedData = await axios.put(`/api/posts/${id}`, newData, {
         headers: { Authorization: `Bearer ${token}` },
       })
+      navigate('/landing')
       console.log('UPDATED POST - ', updatedData)
     } catch (err) {
       console.log(err)
@@ -49,7 +52,7 @@ const PostEdit = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input
           placeholder="Project"
           type="text"
@@ -80,7 +83,9 @@ const PostEdit = () => {
           value={formData.technologies}
           onChange={(selected) => handleMultiChange(selected, 'technologies')}
         />
-        <input type="submit" value="Update Post" />
+        <Link to="/landing" onClick={handleSubmit}>
+          Update Post
+        </Link>
       </form>
     </div>
   )
