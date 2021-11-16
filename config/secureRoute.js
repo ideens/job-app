@@ -21,7 +21,7 @@ export const secureRoute = async (req, res, next) => {
     if (!userToVerify) throw new Error('Header not found')
 
     // set a new key on request object
-    console.log(userToVerify)
+    console.log('CURRENT USER - ', userToVerify)
     req.currentUser = userToVerify
 
     next()

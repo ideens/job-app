@@ -35,7 +35,6 @@ const Register = () => {
       }
     }
   }
-
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({ ...formData, [name]: value })
@@ -85,6 +84,7 @@ const Register = () => {
             value={formData.passwordConfirmation}
             onChange={handleChange}
           />
+
           <input type="submit" value="Register" />
         </form>
       </div>
