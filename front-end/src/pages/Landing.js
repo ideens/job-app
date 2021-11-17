@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Posts from '../components/Posts'
 import { getCurrentUser } from '../helpers/api'
 
-const Landing = () => {
+const Landing = ({ id }) => {
   const [userName, setUserName] = useState('')
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Landing = () => {
       <h1>TECHANIC</h1>
       <h2>Hi, {userName}</h2>
       <nav>
-        <Link to="/profile">Profile</Link>
+        <Link to={`/profile`}>Profile</Link>
         <Link to="/landing">Home</Link>
       </nav>
       <Posts />

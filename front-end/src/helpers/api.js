@@ -40,3 +40,16 @@ export const getSinglePost = async (id) => {
     console.log(err)
   }
 }
+
+export const getProfile = async () => {
+  const token = localStorage.getItem('token')
+  try {
+    const { data } = await axios.get(`/api/profile`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    console.log('PROFILE DATA =>', data)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}
