@@ -17,6 +17,7 @@ const Landing = () => {
       <nav>
         <Link to="/profile">Profile</Link>
         <Link to="/landing">Home</Link>
+        <Link to="/savedpost">Favorites</Link>
       </nav>
       <Posts />
     </div>

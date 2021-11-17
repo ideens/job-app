@@ -21,6 +21,22 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
       console.log(err)
     }
   }
+   const handleSavedPost = async (e) => {
+     e.preventDefault()
+     const token = localStorage.getItem('token')
+
+     try {
+       const response = await axios.get(`/api/posts/${id}`,{
+         headers: { Authorization: `Bearer ${token}` },
+       })
+       console.log(response.data)
+       navigate('/landing')
+     }catch(err) {
+       console.log(err)
+     }
+   }
+    
+  
 
   return (
     <div>
@@ -37,9 +53,10 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
         </p>
       </div>
       <Link to={`/edit/${_id}`}>Edit</Link>
-      <Link to="/landing" onClick={handleDeletePost}>
-        Delete
-      </Link>
+      <Link to="/landing" onClick={handleDeletePost}> Delete </Link>
+      <Link to="/savedpost" onClick={handleSavedPost}> Favorite </Link>
+
+       
     </div>
   )
 }
