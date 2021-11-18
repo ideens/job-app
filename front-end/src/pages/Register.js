@@ -46,7 +46,7 @@ const Register = () => {
   }
 
   return (
-    <div>
+    <div className="yellow">
       <div>
         <form onSubmit={handleSubmit}>
           <input

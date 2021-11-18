@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PostSave from './PostSave'
 import { getPayload } from '../helpers/auth'
+import '../styles/_PostsCard.scss'
 
 const PostsCard = ({
   _id,
@@ -27,15 +28,16 @@ const PostsCard = ({
       <Link to={`/landing/${_id}`} style={{ textDecoration: 'none' }}>
         <div className="postscard-container">
           <h2>{project}</h2>
-          <p>
-            Experience: <br /> {experience}
-          </p>
-          <p>
-            Description: <br /> {description}
-          </p>
-          <p>
-            Technologies: <br /> {technologies}
-          </p>
+          <p className="heading">Experience</p>
+          <p>{experience}</p>
+          <p className="heading">Description</p>
+          <p>{description}</p>
+          <p className="heading">Technologies</p>
+          <ul>
+            {technologies.map((t) => (
+              <li>{t}</li>
+            ))}
+          </ul>
         </div>
       </Link>
       <div className="save-button">
