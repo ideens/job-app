@@ -1,17 +1,21 @@
 import React from 'react'
 import { togglePostSave } from '../helpers/api'
-import { useParams } from 'react-router-dom'
+//import { useParams } from 'react-router-dom'
 
-const PostSave = () => {
-  const { id } = useParams()
-
-  const handleClick = () => {
-    togglePostSave(id)
+const PostSave = ({ id, isSaved, setIsSaved }) => {
+  const handleClick = async () => {
+    try {
+      const data = await togglePostSave(id)
+      console.log(!!data)
+      setIsSaved(!!data)
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
     <div>
-      <button onClick={handleClick}>Save</button>
+      <button onClick={handleClick}>{isSaved ? 'Saved' : 'Save'}</button>
     </div>
   )
 }

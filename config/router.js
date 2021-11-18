@@ -46,7 +46,8 @@ router
   .get(getSinglePost)
   .delete(secureRoute, removePost)
   .put(secureRoute, updatePost)
-  .post(secureRoute, toggleSave)
+
+router.route('/saved/:id').put(secureRoute, toggleSave)
 
 router.route('/posts/:id/comments').post(secureRoute, addAComment)
 

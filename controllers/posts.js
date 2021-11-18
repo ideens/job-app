@@ -97,12 +97,14 @@ export const toggleSave = async (req, res) => {
       match.remove()
       await postSave.save({ validateModifiedOnly: true })
       console.log('MATCH AFTER', postSave)
+      return res.sendStatus(204)
     } else {
       const newSave = { ...req.body, owner: req.currentUser._id }
       console.log('NO MATCH - SAVE - ', newSave)
       postSave.saved.push(newSave)
       await postSave.save({ validateModifiedOnly: true })
       console.log('POSTSAVED', postSave)
+      return res.status(200).json(true)
     }
   } catch (err) {
     console.log(err)

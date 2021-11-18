@@ -6,7 +6,7 @@ import { secret } from './environment.js'
 export const secureRoute = async (req, res, next) => {
   try {
     // check if there's a token on the incoming request
-    if (!req.headers.authorization) throw new Error()
+    if (!req.headers.authorization) throw new Error('No header')
 
     // extract the token from the request
     const token = req.headers.authorization.replace('Bearer ', '')

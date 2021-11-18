@@ -57,7 +57,7 @@ export const getProfile = async () => {
 export const togglePostSave = async (id) => {
   const token = localStorage.getItem('token')
   try {
-    const { data } = await axios.post(`/api/posts/${id}`, {
+    const { data } = await axios.put(`/api/saved/${id}`, null, {
       headers: { Authorization: `Bearer ${token}` },
     })
     console.log('SAVED POST- ', data)
