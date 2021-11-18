@@ -12,6 +12,14 @@ const commentSchema = new mongoose.Schema(
   }
 )
 
+const saveSchema = new mongoose.Schema({
+  owner: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true,
+  },
+})
+
 const postSchema = new mongoose.Schema(
   {
     project: { type: String, required: true, maxlength: 50 },
@@ -20,6 +28,7 @@ const postSchema = new mongoose.Schema(
     technologies: [{ type: String }],
     owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
     comments: [commentSchema],
+    saved: [saveSchema],
   },
   {
     timestamps: true,

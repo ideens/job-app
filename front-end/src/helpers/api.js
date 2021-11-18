@@ -53,3 +53,29 @@ export const getProfile = async () => {
     console.log(err)
   }
 }
+
+export const savePost = async (id) => {
+  const token = localStorage.getItem('token')
+  try {
+    const { data } = await axios.post(`/api/posts/${id}/save`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    console.log('SAVED POST- ', data)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+export const unsavePost = async (id, saveId) => {
+  const token = localStorage.getItem('token')
+  try {
+    const { data } = await axios.post(`/api/posts/${id}/save/${saveId}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+    console.log('UNSAVED POST- ', data)
+    return data
+  } catch (err) {
+    console.log(err)
+  }
+}

@@ -11,6 +11,7 @@ import {
   getAllPosts,
   getSinglePost,
   removePost,
+  toggleSave,
   updatePost,
 } from '../controllers/posts.js'
 import { secureRoute } from './secureRoute.js'
@@ -45,6 +46,7 @@ router
   .get(getSinglePost)
   .delete(secureRoute, removePost)
   .put(secureRoute, updatePost)
+  .post(secureRoute, toggleSave)
 
 router.route('/posts/:id/comments').post(secureRoute, addAComment)
 

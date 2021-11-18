@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PostSave from './PostSave'
 
 const PostsCard = ({ _id, project, technologies, experience, description }) => {
   return (
@@ -18,6 +19,9 @@ const PostsCard = ({ _id, project, technologies, experience, description }) => {
           </p>
         </div>
       </Link>
+      <div>
+        <PostSave />
+      </div>
     </div>
   )
 }
