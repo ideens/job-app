@@ -77,6 +77,13 @@ const PostAdd = () => {
           value={formData.description}
           onChange={handleChange}
         />
+        <input
+          placeholder="Location"
+          type="text"
+          name="location"
+          value={formData.location}
+          onChange={handleChange}
+        />
         <Select
           isMulti
           name="technologies"

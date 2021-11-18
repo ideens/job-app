@@ -4,11 +4,13 @@ import PostsCard from './PostsCard'
 
 const Posts = () => {
   const [posts, setPosts] = useState([])
+  
 
   useEffect(() => {
     getPosts().then(setPosts)
   }, [])
 
+ 
   return (
     <div>
       <div>

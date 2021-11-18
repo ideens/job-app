@@ -3,7 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useParams, useNavigate } from 'react-router-dom'
 
-const PostCard = ({ _id, project, technologies, experience, description }) => {
+const PostCard = ({ _id, project, technologies, experience, description, location }) => {
   const { id } = useParams()
   const navigate = useNavigate()
 
@@ -22,6 +22,7 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
     }
   }
 
+
   return (
     <div>
       <div>
@@ -35,11 +36,17 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
         <p>
           Technologies: <br /> {technologies.map((t) => t.value)}
         </p>
+        <p>
+          Location: <br /> {location}
+        </p>
       </div>
       <Link to={`/edit/${_id}`}>Edit</Link>
       <Link to="/landing" onClick={handleDeletePost}>
         Delete
       </Link>
+      {/* <Link to="/profile" onClick={handleFavouritePost}>
+        Add To Favourites
+      </Link> */}
     </div>
   )
 }

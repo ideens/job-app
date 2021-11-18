@@ -1,4 +1,6 @@
+import post from '../models/post.js'
 import Post from '../models/post.js'
+import user from '../models/users.js'
 
 //GET POSTS
 export const getAllPosts = async (_req, res) => {
@@ -79,5 +81,18 @@ export const addAComment = async (req, res) => {
   } catch (err) {
     console.log(err)
     return res.status(404).json({ message: 'ERROR - could not post comment' })
+  }
+}
+
+export const savedPost = async(req, res) => {
+  try {
+    const { id } = req.params
+    const saved = await Post.findById(id)
+    if(!saved) throw new Error(notFound)
+    user.savedPost.push(saved)
+    await post.save({ validateModifiedOnly: true})
+    return res.status(201).json(post)
+  } catch (err) {
+    console.log(err)
   }
 }
