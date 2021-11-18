@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+.postscard-container-parent {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}

@@ -19,6 +19,7 @@ export const getCurrentUser = async (req, res) => {
     const user = await User.findById(req.currentUser._id)
       .populate('createdPosts')
       .populate('createdProfile')
+      .populate('savedPosts')
     if (!user) throw new Error()
     return res.status(200).json(user)
   } catch (err) {

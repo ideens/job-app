@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import uniqueValidator from 'mongoose-unique-validator'
 
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 200 },
@@ -30,11 +31,6 @@ profileSchema.virtual('userAverageRating').get(function () {
 })
 
 profileSchema.set('toJSON', { virtuals: true })
+profileSchema.plugin(uniqueValidator)
 
 export default mongoose.model('Profile', profileSchema)
-
-// rating
-// reviews from other devs
-// location
-// image
-// posts created

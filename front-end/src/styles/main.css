@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+.postscard-container-parent {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container-postcards {
+  width: 300px;
+  height: 300px;
+  margin: 10px 10px 20px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid lightseagreen;
+  border-radius: 5px;
+}
+
+.postscard-container {
+  padding: 0px 10px 0px 10px;
+  margin-top: 15px;
+  height: 270px;
+}
+.postscard-container h2 {
+  font-size: 16px;
+}
+.postscard-container p {
+  font-size: 12px;
+}
+.postscard-container ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  padding: 0px;
+}
+.postscard-container ul li {
+  font-size: 10px;
+  border-radius: 10px;
+  padding: 2px 8px;
+  background-color: lightseagreen;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.yellow {
+  background-color: #eac22b;
+  max-width: 350px;
+  border-radius: 30px;
+}
+
+.flex-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+input {
+  background-color: white;
+  width: 300px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 30px;
+  border: 2px solid rgba(12, 194, 240, 0.952);
+}
+
+::placeholder {
+  text-align: center;
+}
+
+input:last-child {
+  width: 175px;
+  margin-bottom: 25px;
+  background-color: rgba(12, 194, 240, 0.952);
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=main.css.map */

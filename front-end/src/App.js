@@ -8,8 +8,7 @@ import SinglePost from './components/SinglePost'
 import PostAdd from './pages/PostAdd'
 import PostEdit from './components/PostEdit'
 import Profile from './pages/Profile'
-
-//import Home component once created
+import ProfileUpdate from './pages/ProfileUpdate'
 
 const App = () => {
   return (
@@ -24,6 +23,7 @@ const App = () => {
         <Route path="add" element={<PostAdd />} />
         <Route path="edit/:id" element={<PostEdit />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="update-profile" element={<ProfileUpdate />} />
       </Routes>
     </div>
   )

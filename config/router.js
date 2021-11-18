@@ -11,12 +11,15 @@ import {
   getAllPosts,
   getSinglePost,
   removePost,
+  toggleSave,
   updatePost,
 } from '../controllers/posts.js'
 import { secureRoute } from './secureRoute.js'
 import {
   addProfile,
   deleteProfile,
+  getAllProfiles,
+  getProfile,
   updateProfile,
 } from '../controllers/profile.js'
 
@@ -28,10 +31,14 @@ router.route('/users').get(getAllUsers)
 router.route('/users/:id').get(secureRoute, getOneUser)
 router.route('/me').get(secureRoute, getCurrentUser)
 router.route('/me/profile').post(secureRoute, addProfile)
+router.route('/profile/:id').delete(secureRoute, deleteProfile)
+
 router
-  .route('/profile/:id')
-  .delete(secureRoute, deleteProfile)
+  .route('/profile')
+  .get(secureRoute, getProfile)
   .put(secureRoute, updateProfile)
+
+router.route('/profiles').get(getAllProfiles)
 
 router.route('/posts').get(getAllPosts).post(secureRoute, addAPost)
 router
@@ -39,6 +46,8 @@ router
   .get(getSinglePost)
   .delete(secureRoute, removePost)
   .put(secureRoute, updatePost)
+
+router.route('/saved/:id').put(secureRoute, toggleSave)
 
 router.route('/posts/:id/comments').post(secureRoute, addAComment)
 

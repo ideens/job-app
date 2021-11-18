@@ -1,8 +1,3 @@
-// Here, we're using localStorage to persist the token
-// in the browser upon page-loads and refreshes.
-
-// We can set a new token, get it, or remove it.
-
 export const getToken = () => {
   return window.localStorage.getItem('token')
 }
@@ -13,4 +8,13 @@ export const setToken = (token) => {
 
 export const removeToken = () => {
   window.localStorage.removeItem('token')
+}
+
+export const getPayload = () => {
+  const token = getToken()
+  if (!token) return false
+  const split = token.split('.')[1]
+  const payload = JSON.parse(atob(split))
+  console.log(payload)
+  return payload.sub
 }

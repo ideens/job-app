@@ -11,12 +11,13 @@ const Posts = () => {
 
   return (
     <div>
-      <div>
-        {posts.map((post) => (
-          <div key={post._id}>
-            <PostsCard {...post} />
-          </div>
-        ))}
+      <div className="postscard-container-parent">
+        {posts.length &&
+          posts.map((post) => (
+            <div key={post._id}>
+              <PostsCard {...post} />
+            </div>
+          ))}
       </div>
     </div>
   )

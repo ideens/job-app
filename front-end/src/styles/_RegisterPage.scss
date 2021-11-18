@@ -1,0 +1,44 @@
+//variables
+
+$border-color: rgba(12, 194, 240, 0.952);
+
+* {
+  box-sizing: border-box;
+}
+
+.yellow {
+  background-color: #eac22b;
+  max-width: 350px;
+  border-radius: 30px;
+}
+
+.flex-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+input {
+  background-color: white;
+  width: 300px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 30px;
+  border: 2px solid $border-color;
+
+  // border-style: hidden;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+input:last-child {
+  width: 175px;
+  margin-bottom: 25px;
+  background-color: $border-color;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  text-transform: uppercase;
+}
