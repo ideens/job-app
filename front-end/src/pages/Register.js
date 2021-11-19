@@ -67,8 +67,8 @@ const Register = () => {
 
   return (
     <div className="yellow">
-      <div>
-        <form onSubmit={handleSubmit}>
+      <div className="register-container">
+        <form className="flex-form" onSubmit={handleSubmit}>
           <input
             placeholder="First Name"
             type="text"

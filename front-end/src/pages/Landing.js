@@ -13,12 +13,18 @@ const Landing = ({ id }) => {
   return (
     <div>
       <h1>TECHANIC</h1>
-      <h2>Hi, {userName}</h2>
-      <nav>
+      <h2>Hi,{userName}</h2>
+      <nav className="landing-nav">
         <Link to={`/profile`}>Profile</Link>
         <Link to="/landing">Home</Link>
+        <Link to={`/map`}>Map</Link>
+        <Link to={`/add`}>Add Your Post</Link>
       </nav>
-      <Posts />
+     
+
+
+ 
+    <Posts />
     </div>
   )
 }

@@ -24,20 +24,27 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
 
   return (
     <div>
-      <div>
+      <div className="postcard-container">
         <h2>{project}</h2>
-        <p>
-          Experience: <br /> {experience}
+        <p className="heading">
+          Experience: <br /> 
+          
+          </p>
+          <p className="text-fields">{experience}</p>
+        <p className="heading">
+          Description: <br /> 
+         
         </p>
-        <p>
-          Description: <br /> {description}
-        </p>
-        <p>
-          Technologies: <br /> {technologies.map((t) => t.value)}
-        </p>
+        <p className="text-fields"> {description} </p>
+        <p className="heading">Technologies-Needed:</p>
+          <ul>
+            {technologies.map((t) => (
+              <li>{t.value}</li>
+            ))}
+          </ul>
       </div>
-      <Link to={`/edit/${_id}`}>Edit</Link>
-      <Link to="/landing" onClick={handleDeletePost}>
+      <Link className="edit-button" to={`/edit/${_id}`}>Edit</Link>
+      <Link className="delete-button" to="/landing" onClick={handleDeletePost}>
         Delete
       </Link>
     </div>

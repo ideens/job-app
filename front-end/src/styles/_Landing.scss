@@ -1,0 +1,65 @@
+//variables 
+
+*{
+    box-sizing: border-box;
+}
+
+
+.landing-nav {
+    position: absolute;
+    position: fixed;
+    width: 100%;
+    text-align: right;
+    padding-top: 10px;
+    top: 0px;
+    right: 0px;
+    height: 75px;
+    background-color: #f1f1f1cc;
+
+    
+    
+    a {
+            padding-right: 50px;
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bolder;
+    }
+
+    a:hover {
+        font-size: 18px;
+        text-decoration: 2px solid underline;
+    }
+
+
+}
+
+.landing-nav-left {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    padding-top: 10px;
+    top: 0px;
+    right: 0px;
+    height: 75px;
+    background-color: #f1f1f1cc;
+
+    
+    
+    a {
+            padding-left: 50px;
+            color: pink;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bolder;
+    }
+
+  
+
+}
+
+
+
+
+
+

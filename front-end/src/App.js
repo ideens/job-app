@@ -9,6 +9,7 @@ import PostAdd from './pages/PostAdd'
 import PostEdit from './components/PostEdit'
 import Profile from './pages/Profile'
 import ProfileUpdate from './pages/ProfileUpdate'
+import Simplemap from './components/maps'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="edit/:id" element={<PostEdit />} />
         <Route path="profile" element={<Profile />} />
         <Route path="update-profile" element={<ProfileUpdate />} />
+        <Route path="/map" element={<Simplemap />} />
       </Routes>
     </div>
   )

@@ -26,6 +26,7 @@ const postSchema = new mongoose.Schema(
     experience: { type: String, required: true, maxlength: 200 },
     description: { type: String, required: true, maxlength: 600 },
     technologies: [{ type: String }],
+    location: {type: String},
     owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
     comments: [commentSchema],
     saved: [saveSchema],

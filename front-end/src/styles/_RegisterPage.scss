@@ -7,24 +7,27 @@ $border-color: rgba(12, 194, 240, 0.952);
 }
 
 .yellow {
-  background-color: #eac22b;
+  margin: auto;
   max-width: 350px;
-  border-radius: 30px;
+  border-radius: 13px;
+  border: 1px solid $border-color;
 }
 
-.flex-form {
+
+.flex-form  {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-input {
+.flex-form input {
   background-color: white;
+  margin: auto;
   width: 300px;
   height: 50px;
   margin-top: 30px;
-  border-radius: 30px;
-  border: 2px solid $border-color;
+  border-radius: 15px;
+  border: 1px solid rgb(177, 174, 174);
 
   // border-style: hidden;
 }
@@ -33,12 +36,17 @@ input {
   text-align: center;
 }
 
+
 input:last-child {
-  width: 175px;
-  margin-bottom: 25px;
-  background-color: $border-color;
-  color: white;
-  font-weight: bolder;
-  font-size: 20px;
-  text-transform: uppercase;
+  background-color: rgba(12, 194, 240, 0.952);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 16px 46px;
+    color: white;
+    font-weight: bolder;
+    font-size: 17px;
+    text-transform: uppercase;
+    width: 174px;
+    margin: 0 auto;
+    margin-top: 20px;
 }

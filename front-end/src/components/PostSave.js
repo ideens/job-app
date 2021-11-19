@@ -15,7 +15,7 @@ const PostSave = ({ id, isSaved, setIsSaved }) => {
 
   return (
     <div>
-      <button onClick={handleClick}>{isSaved ? 'Saved' : 'Save'}</button>
+      <button className="save-button" onClick={handleClick}>{isSaved ? 'Saved' : 'Save'}</button>
     </div>
   )
 }

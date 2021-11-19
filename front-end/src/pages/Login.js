@@ -37,8 +37,8 @@ const Login = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="yellow-login">
+      <form className="flex-form-login" onSubmit={handleSubmit}>
         <input
           placeholder="Your Email"
           type="email"

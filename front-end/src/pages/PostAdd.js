@@ -54,7 +54,11 @@ const PostAdd = () => {
   }
 
   return (
-    <div>
+    <section className="container">
+    <h2>Add Your Post Below</h2>
+   
+    <div className="post-container">
+    <div className="container-postcards-addPost">
       <form onSubmit={handleSubmit}>
         <input
           placeholder="Project"
@@ -77,6 +81,13 @@ const PostAdd = () => {
           value={formData.description}
           onChange={handleChange}
         />
+         <input
+          placeholder="Location"
+          type="text"
+          name="location"
+          value={formData.location}
+          onChange={handleChange}
+        />
         <Select
           isMulti
           name="technologies"
@@ -88,6 +99,8 @@ const PostAdd = () => {
         <input type="submit" value="Add Post" />
       </form>
     </div>
+    </div>
+    </section>
   )
 }
 
