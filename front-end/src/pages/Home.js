@@ -49,7 +49,7 @@ const Home = () => {
           View Local Projects
           </h3>
           <p>
-         Checkout our map! You can see all projects based on location
+         Checkout our map! You can see all projects based on the location of your post
           </p>
           <img src={mapImage}/>
 

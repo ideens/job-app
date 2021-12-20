@@ -51,7 +51,10 @@ const PostEdit = () => {
   }
 
   return (
-    <div>
+    <section className="container">
+      <h2>Edit Your Post Below</h2>
+    <div className="post-container">
+      <div className="container-postcards-addPost">
       <form>
         <input
           placeholder="Project"
@@ -83,11 +86,14 @@ const PostEdit = () => {
           value={formData.technologies}
           onChange={(selected) => handleMultiChange(selected, 'technologies')}
         />
-        <Link to="/landing" onClick={handleSubmit}>
+        <Link className="update-button" to="/landing" onClick={handleSubmit}>
           Update Post
         </Link>
       </form>
+      </div>
     </div>
+    </section>
+  
   )
 }
 

@@ -82,7 +82,7 @@ const PostAdd = () => {
           onChange={handleChange}
         />
          <input
-          placeholder="Location"
+          placeholder="Location - e.g.Postcode/County"
           type="text"
           name="location"
           value={formData.location}

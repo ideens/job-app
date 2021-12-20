@@ -45,7 +45,7 @@ const Simplemap = ({ _id }) => {
     const [viewPort, setViewPort] = useState({
         latitude: 51.5072,
         longitude: 0.1276,
-        zoom: 10,
+        zoom: 6,
     })
 
     const [popup, setPopUp] = useState(null)
