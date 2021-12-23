@@ -23,27 +23,27 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
   }
 
   return (
-    <div className='postcard-wrapper'>
+    <div className="postcard-wrapper">
       <div className="postcard-container">
         <h2>{project}</h2>
         <p className="heading">
-          Experience: <br /> 
-          
-          </p>
-          <p className="text-fields">{experience}</p>
+          Experience: <br />
+        </p>
+        <p className="text-fields">{experience}</p>
         <p className="heading">
-          Description: <br /> 
-         
+          Description: <br />
         </p>
         <p className="text-fields"> {description} </p>
         <p className="heading">Technologies-Needed:</p>
-          <ul>
-            {technologies.map((t) => (
-              <li>{t.value}</li>
-            ))}
-          </ul>
+        <ul>
+          {technologies.map((t) => (
+            <li>{t.value}</li>
+          ))}
+        </ul>
       </div>
-      <Link className="edit-button" to={`/edit/${_id}`}>Edit</Link>
+      <Link className="edit-button" to={`/edit/${_id}`}>
+        Edit
+      </Link>
       <Link className="delete-button" to="/landing" onClick={handleDeletePost}>
         Delete
       </Link>
