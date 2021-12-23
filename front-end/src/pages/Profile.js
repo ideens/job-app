@@ -1,33 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import ProfileForm from '../components/ProfileForm'
-import { getProfile } from '../helpers/api'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import ProfileForm from "../components/ProfileForm";
+import { getProfile } from "../helpers/api";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
-  const [profileInfo, setProfileInfo] = useState({})
+  const [profileInfo, setProfileInfo] = useState({});
   useEffect(() => {
-    getProfile().then(setProfileInfo)
-  }, [])
+    getProfile().then(setProfileInfo);
+  }, []);
 
   return (
     <div>
-      <h1>profile</h1>
-      <div>
-        {profileInfo ? (
-          <div>
-            <p>About me: {profileInfo.bio}</p>
-            <p>My skills: {profileInfo.skills}</p>
-            <p>Experience: {profileInfo.experience}</p>
-            <Link to="/update-profile">Update</Link>
-          </div>
-        ) : (
-          <div>
-            <ProfileForm />
-          </div>
-        )}
+      <nav className="landing-nav">
+        <Link to="/landing">Home</Link>
+        <Link to={`/map`}>Map</Link>
+        <Link to={`/add`}>Add Your Post</Link>
+      </nav>
+      <div className="heayarn">
+        <h1 className="heading-profile">Profile</h1>
       </div>
+      {profileInfo ? (
+        <div className="profile-container">
+          <div className="profile-card">
+            <div className="profile-image">
+              <img src={profileInfo.profileImage} />
+            </div>
+            <div className="profile-text">
+              <p>About Me: {profileInfo.bio}</p>
+              <p>My Skills: {profileInfo.skills}</p>
+              <p>Experience: {profileInfo.experience}</p>
+            </div>
+          </div>
+          <Link className="update-cta" to="/update-profile">
+            Update My Profile
+          </Link>
+        </div>
+      ) : (
+        <div>
+          <ProfileForm />
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

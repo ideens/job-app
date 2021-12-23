@@ -1,10 +1,7 @@
 //variables
 
-$register-color: rgba(12, 194, 240, 0.952);
-$login-color: rgba(226, 52, 188, 0.61);
-
-
-
+$register-color:#9883e5;
+$body-color: #1d3557;
 
 *{
     box-sizing: border-box;
@@ -12,8 +9,10 @@ $login-color: rgba(226, 52, 188, 0.61);
 
 
 h1 {
-    font-size: 78px;
+    font-size: 50px;
     margin-bottom: 20px;
+    font-family: 'Rubik', sans-serif;;
+    color: $body-color;
 }
 
 h2 {
@@ -21,12 +20,40 @@ h2 {
     font-size: 24px;
     width: 500px;
     text-align: center;
-    color: rgb(177, 174, 174);
     margin-bottom: 50px;
+    color: $body-color;
     
 }
+
+h3 {
+    color: $body-color;
+}
+
+.home-logo{
+    width:400px;
+    margin: 0 auto;
+
+    img {
+        width: 80%;
+    }
+}
+
+.logo-title {
+    margin-top: 0px;
+}
+
+
+.home-text {
+    margin: 0 auto;
+    font-size: 24px;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
 .register-button {
-    background-color: rgba(12, 194, 240, 0.952);
+    background-color: $register-color;
     text-decoration: none;
     margin-right: 30px;
     border-radius: 10px;
@@ -38,7 +65,7 @@ h2 {
 }
 
 .login-button {
-    background-color: $login-color;
+    background-color:$register-color;
     text-decoration: none;
     margin-right: 30px;
     border-radius: 10px;
@@ -65,12 +92,12 @@ section {
 }
 
 .section-cards {
-    border-top: solid 2px #dddddd;
+    border-top: solid 2px $register-color;
     width: 500px;
 }
 
 .section-cards p {
-    color: #817e7e;
+    color: #1d3557;
 }
 
 img {

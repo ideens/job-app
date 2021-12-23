@@ -55,7 +55,7 @@ const PostAdd = () => {
 
   return (
     <section className="container">
-    <h2>Add Your Post Below</h2>
+    <h1>Add Your Post Below</h1>
    
     <div className="post-container">
     <div className="container-postcards-addPost">
@@ -96,7 +96,7 @@ const PostAdd = () => {
           classNamePrefix="select"
           onChange={(selected) => handleMultiChange(selected, 'technologies')}
         />
-        <input type="submit" value="Add Post" />
+        <input className='add-cta' type="submit" value="Add Post" />
       </form>
     </div>
     </div>

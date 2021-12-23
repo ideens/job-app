@@ -1,3 +1,4 @@
+
 export const getToken = () => {
   return window.localStorage.getItem('token')
 }
@@ -17,4 +18,8 @@ export const getPayload = () => {
   const payload = JSON.parse(atob(split))
   console.log(payload)
   return payload.sub
+}
+
+export const signOut = () => {
+  removeToken()
 }

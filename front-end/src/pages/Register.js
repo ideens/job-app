@@ -104,7 +104,7 @@ const Register = () => {
             value={formData.passwordConfirmation}
             onChange={handleChange}
           />
-          <input type="submit" value="Register" />
+          <input className="register-cta" type="submit" value="Register" />
         </form>
       </div>
       <p>{error}</p>

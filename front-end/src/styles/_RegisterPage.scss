@@ -1,6 +1,9 @@
 //variables
 
-$border-color: rgba(12, 194, 240, 0.952);
+
+$orange-color: #dbad6a;
+$register-color:#9883e5;
+
 
 * {
   box-sizing: border-box;
@@ -10,7 +13,7 @@ $border-color: rgba(12, 194, 240, 0.952);
   margin: auto;
   max-width: 350px;
   border-radius: 13px;
-  border: 1px solid $border-color;
+
 }
 
 
@@ -27,7 +30,7 @@ $border-color: rgba(12, 194, 240, 0.952);
   height: 50px;
   margin-top: 30px;
   border-radius: 15px;
-  border: 1px solid rgb(177, 174, 174);
+  border: 1px solid $orange-color;
 
   // border-style: hidden;
 }
@@ -37,8 +40,8 @@ $border-color: rgba(12, 194, 240, 0.952);
 }
 
 
-input:last-child {
-  background-color: rgba(12, 194, 240, 0.952);
+.flex-form input:last-child {
+    background-color: $orange-color;
     text-decoration: none;
     border-radius: 10px;
     padding: 16px 46px;

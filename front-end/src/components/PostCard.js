@@ -23,7 +23,7 @@ const PostCard = ({ _id, project, technologies, experience, description }) => {
   }
 
   return (
-    <div>
+    <div className='postcard-wrapper'>
       <div className="postcard-container">
         <h2>{project}</h2>
         <p className="heading">

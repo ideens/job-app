@@ -29,11 +29,11 @@ const PostsCard = ({
         <div className="read-more"><span>Read More</span></div>
         <div className="postscard-container">
           <h2>{project}</h2>
-          <p className="heading">Experience</p>
+          <p className="heading">Experience:</p>
           <p>{experience}</p>
           {/* <p className="heading">Description</p>
           <p>{description}</p> */}
-          <p className="heading">Technologies</p>
+          <p className="heading">Technologies:</p>
           <ul>
             {technologies.map((t) => (
               <li>{t}</li>

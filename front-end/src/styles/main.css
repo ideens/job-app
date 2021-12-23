@@ -29,6 +29,11 @@ body {
   background-color: white;
   background-repeat: no-repeat;
   background-size: 100%;
+
+}
+
+p {
+  color: #1d3557;
 }
 
 .container-postcards {

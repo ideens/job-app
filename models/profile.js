@@ -11,6 +11,7 @@ const profileSchema = new mongoose.Schema({
   bio: { type: String, required: true },
   skills: { type: String, required: true },
   experience: { type: String, required: true },
+  profileImage: { type: String, required: false },
   reviews: [reviewSchema],
   owner: {
     type: mongoose.Schema.ObjectId,

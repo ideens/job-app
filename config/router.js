@@ -23,6 +23,7 @@ import {
   updateProfile,
 } from '../controllers/profile.js'
 
+
 // Invoking a router
 const router = express.Router()
 
@@ -47,7 +48,9 @@ router
   .delete(secureRoute, removePost)
   .put(secureRoute, updatePost)
 
-router.route('/saved/:id').put(secureRoute, toggleSave)
+router.route('/saved/:id')
+.put(secureRoute, toggleSave)
+
 
 router.route('/posts/:id/comments').post(secureRoute, addAComment)
 

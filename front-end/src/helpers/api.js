@@ -54,6 +54,18 @@ export const getProfile = async () => {
   }
 }
 
+// export const savedPost = async () => {
+//   const token = localStorage.getItem('token')
+//   try {
+//     const { data } = await axios.get(`api/saved/`, {
+//       headers: { Authorization: `Bearer ${token}` },
+//     })
+//     return data
+//   } catch (err) {
+//     console.log(err)
+//   }
+// }
+
 export const togglePostSave = async (id) => {
   const token = localStorage.getItem('token')
   try {

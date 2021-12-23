@@ -86,7 +86,7 @@ const PostEdit = () => {
           value={formData.technologies}
           onChange={(selected) => handleMultiChange(selected, 'technologies')}
         />
-        <Link className="update-button" to="/landing" onClick={handleSubmit}>
+        <Link className="add-cta" to="/landing" onClick={handleSubmit}>
           Update Post
         </Link>
       </form>
