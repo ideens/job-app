@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import projectImage from "../assets/project.jpeg";
-import collabImage from "../assets/collab.jpeg";
-import mapImage from "../assets/map.jpeg";
-import logoImage from "../assets/greenlogo.png";
+import projectImage from '../assets/project.jpeg'
+import collabImage from '../assets/collab.jpeg'
+import mapImage from '../assets/map.jpeg'
+import logoImage from '../assets/yellowlogo.png'
 
 const Home = () => {
   return (
@@ -54,7 +54,7 @@ const Home = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
