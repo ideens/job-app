@@ -1,83 +1,64 @@
-//variables 
+//variables
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 $body-color: #1d3557;
-$register-color:#9883e5;
-
+$register-color: #9883e5;
 
 .header-contain {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    max-width: 500px;
-    margin: 0 auto;
-    align-items: center;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  margin: 0 auto;
+  align-items: center;
 
-
-    img {
-        width: 200px;
-    }
+  img {
+    width: 90px;
+    margin-left: 50px;
+  }
 }
 
 .landing-nav {
-    position: absolute;
-    // position: fixed;
-    width: 100%;
-    text-align: right;
-    padding-top: 10px;
-    top: 0px;
-    right: 0px;
-    height: 75px;
-    background-color: $body-color;
+  position: absolute;
+  // position: fixed;
+  width: 100%;
+  text-align: right;
+  padding-top: 10px;
+  top: 0px;
+  right: 0px;
+  height: 75px;
+  background-color: $body-color;
 
-
-
-    a {
-        padding-right: 50px;
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-weight: bolder;
-    }
-
-    a:hover {
-        font-size: 18px;
-        text-decoration: 5px solid underline $register-color;
-    }
-
-
-}
-
-.sign-out-left {
-    position: absolute;
-    // position: fixed;
-    text-align: left;
-    padding-top: 10px;
-    border: 0px;
-    top: 0px;
-    left: 0px;
-    margin-left: 25px;
+  a {
+    padding-right: 50px;
     color: white;
-    background-color: $body-color;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bolder;
-    font-size: 17px;
+  }
 
-
-
-
+  a:hover {
+    font-size: 18px;
+    text-decoration: 5px solid underline $register-color;
+  }
 }
 
-
-
-
-
-
-
-
-
-
+.sign-out-left {
+  position: absolute;
+  // position: fixed;
+  text-align: left;
+  padding-top: 10px;
+  border: 0px;
+  top: 0px;
+  left: 0px;
+  margin-left: 25px;
+  color: white;
+  background-color: $body-color;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 17px;
+}

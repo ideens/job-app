@@ -4,7 +4,7 @@ import Posts from '../components/Posts'
 import { getCurrentUser } from '../helpers/api'
 import { signOut } from '../helpers/auth'
 
-import blueLogo from "../assets/bluelogo.png";
+import blueLogo from '../assets/bluelogo.png'
 
 const Landing = ({ id }) => {
   const [userName, setUserName] = useState('')
@@ -17,12 +17,12 @@ const Landing = ({ id }) => {
 
   const logOut = () => {
     navigate('/')
-  } 
+  }
   return (
     <div>
-      <div className='header-contain'>
-      <img src={blueLogo}/>
-      <h1>TECHANIC</h1>
+      <div className="header-contain">
+        <img src={blueLogo} />
+        <h1>TECHANIC</h1>
       </div>
       <h2>Hi, {userName}!</h2>
       <nav className="landing-nav">
@@ -31,12 +31,16 @@ const Landing = ({ id }) => {
         <Link to={`/map`}>Map</Link>
         <Link to={`/add`}>Add Your Post</Link>
       </nav>
-    <button className='sign-out-left' onClick={() => {
-      signOut(); logOut();
-    }}>
-          Sign Out
-        </button>
-    <Posts />
+      <button
+        className="sign-out-left"
+        onClick={() => {
+          signOut()
+          logOut()
+        }}
+      >
+        Sign Out
+      </button>
+      <Posts />
     </div>
   )
 }

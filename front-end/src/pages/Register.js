@@ -13,15 +13,11 @@ const Register = () => {
     passwordConfirmation: '',
   })
 
-
-
   const [profileData, setProfileData] = useState({
-
     bio: '',
     skills: '',
     experience: '',
   })
-
 
   const navigate = useNavigate()
 
@@ -30,10 +26,10 @@ const Register = () => {
     const token = localStorage.getItem('token')
     try {
       const { data } = await axios.post('/api/register', formData)
-  
+
       console.log('DATA', data)
       const { biodata } = await axios.post('/api/me/profile', profileData, {
-        headers: {Authorization: `Bearer ${token}`},
+        headers: { Authorization: `Bearer ${token}` },
       })
       console.log('bioData ->', biodata)
       handleSuccessfulRegister()
@@ -67,6 +63,7 @@ const Register = () => {
 
   return (
     <div className="yellow">
+      <h1>Register your account</h1>
       <div className="register-container">
         <form className="flex-form" onSubmit={handleSubmit}>
           <input
