@@ -9,7 +9,7 @@ import PostAdd from './pages/PostAdd'
 import PostEdit from './components/PostEdit'
 import Profile from './pages/Profile'
 import ProfileUpdate from './pages/ProfileUpdate'
-import Simplemap from './components/maps'
+import Simplemap from './components/Maps'
 
 const App = () => {
   return (
