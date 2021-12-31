@@ -1,6 +1,4 @@
 import axios from "axios";
-import dotenv from 'dotenv'
-dotenv.config()
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -57,7 +55,7 @@ const Simplemap = ({ _id }) => {
           mapboxApiAcessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
           height="95%"
           width="100%"
-          mapStyle="mapbox://styles/mapbox/streets-v11"
+          mapStyle="mapbox://styles/mapbox/outdoors-v11"
           {...viewPort}
           onViewStateChange={(viewPort) => setViewPort(viewPort)}
         >
