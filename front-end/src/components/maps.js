@@ -4,6 +4,8 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 
+
+console.log(process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)
 const Simplemap = ({ _id }) => {
   const [coords, setCoords] = useState([]);
   const [postId, setPostId] = useState();
@@ -17,6 +19,7 @@ const Simplemap = ({ _id }) => {
       for (let i = 0; i < posts.length; i++) {
         const location = posts[i].location;
         const id = posts[i]._id;
+       
         const response = await axios.get(
           `https://api.opencagedata.com/geocode/v1/json?q=${location}&key=39b07783561747b1b301c84b5e602c31&language=en&pretty=1`
         );
