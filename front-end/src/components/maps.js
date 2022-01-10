@@ -55,7 +55,7 @@ const Simplemap = ({ _id }) => {
       </nav>
       <div className="map-container">
         <ReactMapGl
-          mapboxApiAcessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+          mapboxApiAcessToken='pk.eyJ1IjoiYWxhMTYxMDkyIiwiYSI6ImNreThtaGJtaDFoNmMydW9uY3I0eDZrNmsifQ.Q3gq1jtbIw4iRrxMUkiCcw'
           height="95%"
           width="100%"
           mapStyle="mapbox://styles/mapbox/outdoors-v11"
