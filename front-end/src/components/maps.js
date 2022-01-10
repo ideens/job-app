@@ -4,8 +4,6 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 
-
-console.log(process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)
 const Simplemap = ({ _id }) => {
   const [coords, setCoords] = useState([]);
   const [postId, setPostId] = useState();
