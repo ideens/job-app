@@ -4,7 +4,9 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import ReactMapGl, { Marker, Popup } from "react-map-gl";
 
+
 const Simplemap = ({ _id }) => {
+  console.log('hello world')
   const [coords, setCoords] = useState([]);
   const [postId, setPostId] = useState();
   const navigate = useNavigate();
