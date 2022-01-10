@@ -58,7 +58,7 @@ const Simplemap = ({ _id }) => {
           mapboxApiAcessToken='pk.eyJ1IjoiYWxhMTYxMDkyIiwiYSI6ImNreThtaGJtaDFoNmMydW9uY3I0eDZrNmsifQ.Q3gq1jtbIw4iRrxMUkiCcw'
           height="95%"
           width="100%"
-          mapStyle="mapbox://styles/mapbox/outdoors-v11"
+          mapStyle="https://api.mapbox.com/styles/v1/mapbox/outdoors-v11?access_token=pk.eyJ1IjoiYWxhMTYxMDkyIiwiYSI6ImNreThtaGJtaDFoNmMydW9uY3I0eDZrNmsifQ.Q3gq1jtbIw4iRrxMUkiCcw"
           {...viewPort}
           onViewStateChange={(viewPort) => setViewPort(viewPort)}
         >
