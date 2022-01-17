@@ -1,4 +1,4 @@
-# TECHANIC
+# Project 3: TECHANIC
 
 ## Overview
 This was the third project on the General Assembly course and the first group project. The aim of the application is to create a platform where new developers can meet up and collaborate with each other on personal projects that they have posted on the site. The user can create a post and add details of the project, such as the skills and languages required, as well as viewing other users’ posts.
